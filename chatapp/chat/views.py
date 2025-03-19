@@ -5,8 +5,9 @@ from rest_framework.response import Response
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 from outh.models import User  # Directly use the imported User model
+from django.http import JsonResponse
 
-
+from django.contrib.auth.decorators import login_required
 
 class ConversationListCreateView(generics.ListCreateAPIView):
     serializer_class = ConversationSerializer

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 from decouple import config
+from channels.layers import get_channel_layer
 from django.conf.global_settings import EMAIL_USE_SSL
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -36,6 +37,7 @@ LOGOUT_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -58,6 +60,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'channels',#websocket
     'chat',
+
 ]
 
 SITE_ID = 1
@@ -70,6 +73,7 @@ AUTHENTICATION_BACKENDS = (
 
 )
 ASGI_APPLICATION = 'chatapp.asgi.application'
+
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels.layers.InMemoryChannelLayer',
