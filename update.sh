@@ -17,4 +17,4 @@ git pull --rebase origin main
 
 # Push changes to the main branch
 git push -u origin main
-#./git_push.sh myapp
+#./update.sh <name of the commit>
