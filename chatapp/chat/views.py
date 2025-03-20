@@ -1,6 +1,6 @@
 from rest_framework import generics, permissions, status, serializers
-from .models import Message, Conversation
-from .serializers import ConversationSerializer, MessageSerializer
+from .models import *
+from .serializers import *
 from rest_framework.response import Response
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync

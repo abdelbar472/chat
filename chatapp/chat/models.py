@@ -1,4 +1,4 @@
-from outh.models import User
+from outh.models import *
 from django.db import models
 
 

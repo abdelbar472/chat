@@ -4,7 +4,7 @@ import json
 
 
 async def chat_client():
-    uri = "ws://127.0.0.1:8000/ws/chat/1/"  # Replace with the correct conversation ID
+    uri = "ws://127.0.0.1:8001/ws/chat/1/"  # Replace with the correct conversation ID
     async with websockets.connect(uri) as websocket:
         print("Connected to WebSocket server.")
 
