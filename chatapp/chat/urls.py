@@ -8,6 +8,6 @@ urlpatterns = [
     path("conversations/<int:conversation_id>/messages/", MessageListCreateView.as_view(), name="message-list"),
 ]
 
-'''websocket_urlpatterns = [
+websocket_urlpatterns = [
     re_path(r"ws/chat/(?P<conversation_id>\d+)/$", ChatConsumer.as_asgi()),
-]'''
+]
