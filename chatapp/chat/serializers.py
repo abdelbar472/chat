@@ -1,21 +1,15 @@
 from rest_framework import serializers
-from outh.models import User
-from .models import *
+from .models import Conversation, Message
+from django.contrib.auth import get_user_model
 
-
+User = get_user_model()
 
 class ConversationSerializer(serializers.ModelSerializer):
-    user1 = serializers.SlugRelatedField(slug_field="username", queryset=User.objects.all())
-    user2 = serializers.SlugRelatedField(slug_field="username", queryset=User.objects.all())
-
     class Meta:
         model = Conversation
-        fields = ["id", "user1", "user2", "created_at"]
-
+        fields = "__all__"
 
 class MessageSerializer(serializers.ModelSerializer):
-    sender = serializers.SlugRelatedField(slug_field="username", queryset=User.objects.all())
-
     class Meta:
         model = Message
-        fields = ["id", "conversation", "sender", "content", "timestamp", "status"]
+        fields = "__all__"

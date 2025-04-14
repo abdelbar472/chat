@@ -1,13 +1,9 @@
-from django.urls import path, re_path
+from django.urls import path
 from .views import *
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from .consumers import *
 
 urlpatterns = [
     path("conversations/", ConversationListCreateView.as_view(), name="conversation-list"),
-    path("conversations/<int:conversation_id>/messages/", MessageListCreateView.as_view(), name="message-list"),
-]
-
-websocket_urlpatterns = [
-    re_path(r"ws/chat/(?P<conversation_id>\d+)/$", ChatConsumer.as_asgi()),
+    path("messages/<int:conversation_id>/", MessageListCreateView.as_view(), name="message-list"),
+    path("ws-token/<int:conversation_id>/", WebSocketTokenView.as_view(), name="ws-token"),
+    path('<int:conversation_id>/', chat_view, name='chat'),  # Fix reference to chat_view
 ]
