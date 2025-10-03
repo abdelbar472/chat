@@ -138,7 +138,7 @@ This project demonstrates:
 ## 📱 Contact
 
 - GitHub: [@abdelbar472](https://github.com/abdelbar472)
-- Email: [your-email@example.com]
+- Email: [k.abdelbar128@gmail.com]
 
 ## 📄 License
 
